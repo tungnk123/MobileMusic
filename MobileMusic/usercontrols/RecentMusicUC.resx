@@ -117,17 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_addPlaylist.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAU5JREFUSEvt1klKBDEYxfG6hAtHPIfDAQQVr+F8Fpeiblz23uEmKp7CYaei/wcG
-        JLwvlU45LfrBD5oKSUj6q6S6Sf5jFrCPa9zi+ZN+69ke5vFtmcUxXvHe4w0jLGJQtvAEN0nJIzbRlENo
-        BW7gGup7gLGilQ6ZNNEY1SufQ8v2RrTtM+jNGdwAuSWsZM8iJyhGr0xN9UqKa8tpTO1kGBWD6+ikuDZn
-        F2Gu4Do5Ka7NuUCYe7hOToprc3TChVEFuk4qpNpEBaexw0QTL6M2q3BjFCe+g+vkpLg25wZh/qy4dLW5
-        Tk6Ka3O2EUb36U8cIC8oHiDKKVznnAouKqSc7vPe6OKPqrvFA6ZRlTXUbnmJrsUNjBWd20M/BPSN1hRd
-        4i3bru1dx6BM4QiqTDfJV1rlOar/05roddDVdgmdQvpKEf3W4bCD3ldmkl9O130ABjCWDVeaCgIAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
 </root>

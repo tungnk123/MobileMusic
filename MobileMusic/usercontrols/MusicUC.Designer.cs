@@ -31,12 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicUC));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.International = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.fll_musicList = new System.Windows.Forms.FlowLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -58,18 +57,18 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 40);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Pop";
+            this.button2.Text = "VietNam";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // International
             // 
-            this.button3.BackColor = System.Drawing.Color.YellowGreen;
-            this.button3.Location = new System.Drawing.Point(228, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Rock";
-            this.button3.UseVisualStyleBackColor = false;
+            this.International.BackColor = System.Drawing.Color.YellowGreen;
+            this.International.Location = new System.Drawing.Point(228, 19);
+            this.International.Name = "International";
+            this.International.Size = new System.Drawing.Size(126, 40);
+            this.International.TabIndex = 2;
+            this.International.Text = "International";
+            this.International.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -111,25 +110,14 @@
             this.fll_musicList.Size = new System.Drawing.Size(427, 452);
             this.fll_musicList.TabIndex = 5;
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.YellowGreen;
-            this.button4.Location = new System.Drawing.Point(331, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 40);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "EDM";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // MusicUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.fll_musicList);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.International);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "MusicUC";
@@ -145,11 +133,10 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button International;
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.TextBox tb_search;
         public System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.FlowLayoutPanel fll_musicList;
-        private System.Windows.Forms.Button button4;
     }
 }

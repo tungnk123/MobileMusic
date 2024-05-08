@@ -16,5 +16,19 @@ namespace MobileMusic.usercontrols
         {
             InitializeComponent();
         }
+
+        public void loadDataIntoMusicItemUc(Image ava, string video, string name, string author, bool isFav, bool isSaved)
+        {
+            this.lb_title.Text = name;
+            this.lb_author.Text = author;
+            this.pb_logo.Image = ava;
+
+
+        }
+
+        public void changeFavorite(bool isFavorite)
+        {
+            //this.pb_favorite
+        }
     }
 }

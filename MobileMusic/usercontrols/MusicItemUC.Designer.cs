@@ -76,7 +76,7 @@
             // pb_add
             // 
             this.pb_add.Image = ((System.Drawing.Image)(resources.GetObject("pb_add.Image")));
-            this.pb_add.Location = new System.Drawing.Point(245, 44);
+            this.pb_add.Location = new System.Drawing.Point(231, 44);
             this.pb_add.Name = "pb_add";
             this.pb_add.Size = new System.Drawing.Size(32, 32);
             this.pb_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -86,7 +86,7 @@
             // pb_favorite
             // 
             this.pb_favorite.Image = ((System.Drawing.Image)(resources.GetObject("pb_favorite.Image")));
-            this.pb_favorite.Location = new System.Drawing.Point(283, 44);
+            this.pb_favorite.Location = new System.Drawing.Point(269, 44);
             this.pb_favorite.Name = "pb_favorite";
             this.pb_favorite.Size = new System.Drawing.Size(32, 32);
             this.pb_favorite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -96,7 +96,7 @@
             // pb_play
             // 
             this.pb_play.Image = ((System.Drawing.Image)(resources.GetObject("pb_play.Image")));
-            this.pb_play.Location = new System.Drawing.Point(321, 44);
+            this.pb_play.Location = new System.Drawing.Point(307, 44);
             this.pb_play.Name = "pb_play";
             this.pb_play.Size = new System.Drawing.Size(32, 32);
             this.pb_play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +106,7 @@
             // pb_download
             // 
             this.pb_download.Image = ((System.Drawing.Image)(resources.GetObject("pb_download.Image")));
-            this.pb_download.Location = new System.Drawing.Point(359, 44);
+            this.pb_download.Location = new System.Drawing.Point(345, 44);
             this.pb_download.Name = "pb_download";
             this.pb_download.Size = new System.Drawing.Size(32, 32);
             this.pb_download.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

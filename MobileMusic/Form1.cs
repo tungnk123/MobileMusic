@@ -4,18 +4,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MobileMusic
 {
     public partial class Form1 : Form
     {
-        DataTable dtRecents = null;
-        DataTable dtLove = null;
-        DataTable dtMusic = null;
+        
 
         HomeUC homeUC = new HomeUC();
         MusicUC musicUC = new MusicUC();
@@ -47,10 +47,15 @@ namespace MobileMusic
 
 
             //dtLove = ClassData.dt
-
+            
 
         }
+        
 
+        public void loadMusic(int id)
+        {
+            MusicItemUC musicItemUC = new MusicItemUC();
+        }
         private void pb_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
