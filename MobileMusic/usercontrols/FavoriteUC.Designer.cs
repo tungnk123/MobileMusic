@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.fpn_musicList = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // label1
@@ -41,11 +42,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh sách nhạc yêu thích";
             // 
+            // fpn_musicList
+            // 
+            this.fpn_musicList.AutoScroll = true;
+            this.fpn_musicList.Location = new System.Drawing.Point(13, 79);
+            this.fpn_musicList.Name = "fpn_musicList";
+            this.fpn_musicList.Size = new System.Drawing.Size(427, 506);
+            this.fpn_musicList.TabIndex = 6;
+            // 
             // FavoriteUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.fpn_musicList);
             this.Controls.Add(this.label1);
             this.Name = "FavoriteUC";
             this.Size = new System.Drawing.Size(452, 599);
@@ -57,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel fpn_musicList;
     }
 }

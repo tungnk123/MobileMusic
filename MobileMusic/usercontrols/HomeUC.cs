@@ -15,6 +15,13 @@ namespace MobileMusic.usercontrols
         public HomeUC()
         {
             InitializeComponent();
+            loadDownload();
+            loadRecents();
+        }
+
+        public void reload()
+        {
+            loadDownload();
             loadRecents();
         }
 

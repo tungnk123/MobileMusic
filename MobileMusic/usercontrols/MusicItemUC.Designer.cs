@@ -65,11 +65,11 @@
             // 
             // lb_author
             // 
-            this.lb_author.AutoSize = true;
+            this.lb_author.AutoEllipsis = true;
             this.lb_author.ForeColor = System.Drawing.Color.Gray;
             this.lb_author.Location = new System.Drawing.Point(89, 56);
             this.lb_author.Name = "lb_author";
-            this.lb_author.Size = new System.Drawing.Size(42, 20);
+            this.lb_author.Size = new System.Drawing.Size(125, 20);
             this.lb_author.TabIndex = 2;
             this.lb_author.Text = "Zyzz";
             // 
@@ -79,9 +79,10 @@
             this.pb_add.Location = new System.Drawing.Point(231, 44);
             this.pb_add.Name = "pb_add";
             this.pb_add.Size = new System.Drawing.Size(32, 32);
-            this.pb_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_add.TabIndex = 3;
             this.pb_add.TabStop = false;
+            this.pb_add.Click += new System.EventHandler(this.pb_add_Click);
             // 
             // pb_favorite
             // 
@@ -92,6 +93,7 @@
             this.pb_favorite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_favorite.TabIndex = 4;
             this.pb_favorite.TabStop = false;
+            this.pb_favorite.Click += new System.EventHandler(this.pb_favorite_Click);
             // 
             // pb_play
             // 
@@ -102,6 +104,7 @@
             this.pb_play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_play.TabIndex = 5;
             this.pb_play.TabStop = false;
+            this.pb_play.Click += new System.EventHandler(this.pb_play_Click);
             // 
             // pb_download
             // 
@@ -112,6 +115,7 @@
             this.pb_download.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_download.TabIndex = 6;
             this.pb_download.TabStop = false;
+            this.pb_download.Click += new System.EventHandler(this.pb_download_Click);
             // 
             // MusicItemUC
             // 

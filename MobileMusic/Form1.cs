@@ -33,6 +33,8 @@ namespace MobileMusic
             pb_homeMenu.BackColor = Color.Beige;
 
         }
+
+        
         private void reset()
         {
             pb_homeMenu.BackColor = Color.Transparent;
@@ -40,9 +42,15 @@ namespace MobileMusic
             pb_musicMenu.BackColor = Color.Transparent;
             pb_favorite.BackColor = Color.Transparent;
 
+            homeUC.reload();
             homeUC.Visible = false;
+
+
+            musicUC.loadSongs();
             musicUC.Visible = false;
             playlistUC.Visible = false;
+
+            favoriteUC.loadFavoriteSongs();
             favoriteUC.Visible = false;
 
 

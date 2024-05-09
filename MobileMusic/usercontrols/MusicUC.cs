@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace MobileMusic.usercontrols
@@ -14,40 +6,38 @@ namespace MobileMusic.usercontrols
     public partial class MusicUC : UserControl
     {
 
-        string musicPath = "";
-        MusicItemUC itemUC = new MusicItemUC();
-
-        
         public MusicUC()
         {
             InitializeComponent();
-            loadData();
-            //fll_musicList.Controls.Add(itemUC);
-            //fll_musicList.Controls.Add(itemUC2);
-            //fll_musicList.Controls.Add(itemUC3);
-            //fll_musicList.Controls.Add(itemUC4);
-            //fll_musicList.Controls.Add(itemUC5);
-            //fll_musicList.Controls.Add(itemUC6);
+            DataSource data = new DataSource();
+
+            loadSongs();
 
         }
 
-        public void loadData()
+        public void loadSongs()
         {
-            try
+            fpn_musicList.Controls.Clear();
+            DataSource data = new DataSource();
+            data.loadSongIntoDatatable();
+            for (int i = 0; i < DataSource.dtMusic.Rows.Count; i++)
             {
-                StreamReader sr = new StreamReader(musicPath);
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    string[] st = line.Split(new char[] { '*' });
 
-
-                }
-
-            }
-
-            catch { 
+                MusicItemUC musicItemUC = new MusicItemUC();
+                musicItemUC.loadDataIntoMusicItemUc(
+                    (int)DataSource.dtMusic.Rows[i]["id"]
+                    , (Image)DataSource.dtMusic.Rows[i]["image"]
+                    , (string)DataSource.dtMusic.Rows[i]["music"]
+                    , (string)DataSource.dtMusic.Rows[i]["name"]
+                    , (string)DataSource.dtMusic.Rows[i]["author"]
+                    , (bool)DataSource.dtMusic.Rows[i]["isFav"]
+                    , (bool)DataSource.dtMusic.Rows[i]["isPlay"]
+                    , (bool)DataSource.dtMusic.Rows[i]["isSaved"]
+                    , (int)DataSource.dtMusic.Rows[i]["id"]);
+                fpn_musicList.Controls.Add(musicItemUC);
             }
         }
+
+
     }
 }

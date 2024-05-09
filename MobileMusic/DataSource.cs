@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace MobileMusic
 {
@@ -29,7 +30,8 @@ namespace MobileMusic
             dtMusic.Columns.Add("author", typeof(string));
             dtMusic.Columns.Add("isFav", typeof(bool));
             dtMusic.Columns.Add("isPlay", typeof(bool));
-            dtMusic.Columns.Add("isDown", typeof(bool));
+            dtMusic.Columns.Add("isSaved", typeof(bool));
+            dtMusic.Columns.Add("type", typeof(int));
 
             StreamReader sr = new StreamReader(songPath);
             string str;
@@ -43,6 +45,17 @@ namespace MobileMusic
             }
             sr.Close();
 
+        }
+
+        public void saveSongFromDatatableToFile()
+        {
+            using (StreamWriter sw = new StreamWriter(songPath))
+            {
+                foreach (DataRow row in dtMusic.Rows)
+                {
+                    sw.WriteLine(row["id"] + "*assets\\image\\" + row["id"] + ".png*" + row["music"] + "*" + row["name"] + "*" + row["author"] + "*" + row["isFav"] + "*" + row["isPlay"] + "*" + row["isSaved"] + "*"+ row["type"]);
+                }
+            }
         }
 
         public void saveSongTypeIntoDatatable() { 
@@ -106,8 +119,28 @@ namespace MobileMusic
 
         }
 
-        public void loadLoveIntoDatatable() { 
-            
+        public void loadLoveIntoDatatable() {
+            dtLove = new DataTable();
+            dtLove.Columns.Add("id", typeof(int));
+            dtLove.Columns.Add("image", typeof(Image));
+            dtLove.Columns.Add("music", typeof(string));
+            dtLove.Columns.Add("name", typeof(string));
+            dtLove.Columns.Add("author", typeof(string));
+            dtLove.Columns.Add("isPlay", typeof(bool));
+            dtLove.Columns.Add("isSaved", typeof(bool));
+
+            StreamReader sr = new StreamReader(songPath);
+            string str;
+            while ((str = sr.ReadLine()) != null)
+            {
+                string[] st = str.Split('*');
+                if (st[5] == "True")
+                {
+                    Image ava = Image.FromFile(st[1]);
+                    dtLove.Rows.Add(st[0], ava, st[2], st[3], st[4], bool.Parse(st[6]), bool.Parse(st[7]));
+                }
+            }
+            sr.Close();
         }
     }
 

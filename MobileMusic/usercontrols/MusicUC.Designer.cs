@@ -35,7 +35,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.fll_musicList = new System.Windows.Forms.FlowLayoutPanel();
+            this.fpn_musicList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -102,20 +102,20 @@
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
-            // fll_musicList
+            // fpn_musicList
             // 
-            this.fll_musicList.AutoScroll = true;
-            this.fll_musicList.Location = new System.Drawing.Point(22, 147);
-            this.fll_musicList.Name = "fll_musicList";
-            this.fll_musicList.Size = new System.Drawing.Size(427, 452);
-            this.fll_musicList.TabIndex = 5;
+            this.fpn_musicList.AutoScroll = true;
+            this.fpn_musicList.Location = new System.Drawing.Point(22, 147);
+            this.fpn_musicList.Name = "fpn_musicList";
+            this.fpn_musicList.Size = new System.Drawing.Size(427, 452);
+            this.fpn_musicList.TabIndex = 5;
             // 
             // MusicUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.fll_musicList);
+            this.Controls.Add(this.fpn_musicList);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.International);
             this.Controls.Add(this.button2);
@@ -137,6 +137,6 @@
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.TextBox tb_search;
         public System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.FlowLayoutPanel fll_musicList;
+        private System.Windows.Forms.FlowLayoutPanel fpn_musicList;
     }
 }
