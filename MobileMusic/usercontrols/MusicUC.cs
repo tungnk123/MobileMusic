@@ -5,14 +5,14 @@ namespace MobileMusic.usercontrols
 {
     public partial class MusicUC : UserControl
     {
-
+        //public static MusicItemUC Instance = new MusicItemUC();
+        public static MusicUC Instance = new MusicUC();
         public MusicUC()
         {
             InitializeComponent();
             DataSource data = new DataSource();
-
             loadSongs();
-
+            Instance = this;
         }
 
         public void loadSongs()

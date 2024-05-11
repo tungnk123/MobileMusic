@@ -115,7 +115,7 @@ namespace MobileMusic.usercontrols
         }
         private void pb_add_Click(object sender, EventArgs e)
         {
-            
+            MusicUC.Instance.choosePlaylistUC1.Visible = true;
         }
 
         private void pb_play_Click(object sender, EventArgs e)

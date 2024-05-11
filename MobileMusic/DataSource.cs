@@ -1,24 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace MobileMusic
 {
-    public  class DataSource
+    public class DataSource
     {
         string songPath = "D:\\tai-lieu-uit\\nam-3\\C#\\BaiTH2\\MobileMusic\\MobileMusic\\bin\\Debug\\assets\\song\\song.txt";
         string songTypePath = "D:\\tai-lieu-uit\\nam-3\\C#\\BaiTH2\\MobileMusic\\MobileMusic\\bin\\Debug\\assets\\songtype\\songtype.txt";
+        string playlistPath = "D:\\tai-lieu-uit\\nam-3\\C#\\BaiTH2\\MobileMusic\\MobileMusic\\bin\\Debug\\assets\\playlist\\playlist.txt";
 
+        public static int countLinePlaylist = 0;
         public static DataTable dtRecents = null;
         public static DataTable dtDownload = null;
         public static DataTable dtLove = null;
         public static DataTable dtMusic = null;
+        public static DataTable dtPlaylist = null;
         public static DataTable dtSongType = null;
         public void loadSongIntoDatatable()
         {
@@ -53,15 +51,17 @@ namespace MobileMusic
             {
                 foreach (DataRow row in dtMusic.Rows)
                 {
-                    sw.WriteLine(row["id"] + "*assets\\image\\" + row["id"] + ".png*" + row["music"] + "*" + row["name"] + "*" + row["author"] + "*" + row["isFav"] + "*" + row["isPlay"] + "*" + row["isSaved"] + "*"+ row["type"]);
+                    sw.WriteLine(row["id"] + "*assets\\image\\" + row["id"] + ".png*" + row["music"] + "*" + row["name"] + "*" + row["author"] + "*" + row["isFav"] + "*" + row["isPlay"] + "*" + row["isSaved"] + "*" + row["type"]);
                 }
             }
         }
 
-        public void saveSongTypeIntoDatatable() { 
+
+        public void saveSongTypeIntoDatatable()
+        {
             dtSongType = new DataTable();
             dtSongType.Columns.Add("id", typeof(int));
-            dtSongType.Columns.Add("name", typeof (string));
+            dtSongType.Columns.Add("name", typeof(string));
             dtSongType.Columns.Add("count", typeof(int));
 
             StreamReader sr = new StreamReader(songTypePath);
@@ -119,7 +119,8 @@ namespace MobileMusic
 
         }
 
-        public void loadLoveIntoDatatable() {
+        public void loadLoveIntoDatatable()
+        {
             dtLove = new DataTable();
             dtLove.Columns.Add("id", typeof(int));
             dtLove.Columns.Add("image", typeof(Image));
@@ -142,7 +143,39 @@ namespace MobileMusic
             }
             sr.Close();
         }
+
+        public void savePlayListFromDatatableToFile()
+        {
+            using (StreamWriter sw = new StreamWriter(playlistPath))
+            {
+                foreach (DataRow row in dtPlaylist.Rows)
+                {
+                    sw.WriteLine(row["id"] + "*" + row["title"] + "*" + row["count"] + "*" + row["isDeleted"]);
+                }
+            }
+        }
+
+        public void loadPlayListIntoDatatable()
+        {
+            int count = 0;
+            dtPlaylist = new DataTable();
+            dtPlaylist.Columns.Add("id", typeof(int));
+            dtPlaylist.Columns.Add("title", typeof(string));
+            dtPlaylist.Columns.Add("count", typeof(int));
+            dtPlaylist.Columns.Add("isDeleted", typeof(bool));
+
+            StreamReader sr = new StreamReader(playlistPath);
+            string str;
+            while ((str = sr.ReadLine()) != null)
+            {
+                count++;
+                string[] st = str.Split('*');
+                dtPlaylist.Rows.Add(Int32.Parse(st[0]), st[1], Int32.Parse(st[2]), bool.Parse(st[3]));
+            }
+            sr.Close();
+            countLinePlaylist = count;
+        }
     }
 
-    
+
 }

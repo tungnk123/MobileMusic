@@ -48,6 +48,8 @@ namespace MobileMusic
 
             musicUC.loadSongs();
             musicUC.Visible = false;
+
+            playlistUC.loadPlayList();
             playlistUC.Visible = false;
 
             favoriteUC.loadFavoriteSongs();

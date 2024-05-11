@@ -36,6 +36,7 @@
             this.tb_search = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.fpn_musicList = new System.Windows.Forms.FlowLayoutPanel();
+            this.choosePlaylistUC1 = new MobileMusic.usercontrols.ChoosePlaylistUC();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -110,11 +111,22 @@
             this.fpn_musicList.Size = new System.Drawing.Size(427, 452);
             this.fpn_musicList.TabIndex = 5;
             // 
+            // choosePlaylistUC1
+            // 
+            this.choosePlaylistUC1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.choosePlaylistUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.choosePlaylistUC1.Location = new System.Drawing.Point(65, 174);
+            this.choosePlaylistUC1.Name = "choosePlaylistUC1";
+            this.choosePlaylistUC1.Size = new System.Drawing.Size(333, 307);
+            this.choosePlaylistUC1.TabIndex = 0;
+            this.choosePlaylistUC1.Visible = false;
+            // 
             // MusicUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.choosePlaylistUC1);
             this.Controls.Add(this.fpn_musicList);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.International);
@@ -138,5 +150,6 @@
         public System.Windows.Forms.TextBox tb_search;
         public System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.FlowLayoutPanel fpn_musicList;
+        public ChoosePlaylistUC choosePlaylistUC1;
     }
 }
