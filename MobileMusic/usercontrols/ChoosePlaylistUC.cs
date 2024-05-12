@@ -34,7 +34,17 @@ namespace MobileMusic.usercontrols
 
         private void ChoosePlaylistUC_Load(object sender, EventArgs e)
         {
-            List<string> playlistNames = new List<string> { "Playlist 1", "Playlist 2", "Playlist 3" };
+            List<string> playlistNames = new List<string>();
+            DataSource data = new DataSource();
+            data.loadPlayListIntoDatatable();
+            for (int i = 0; i < DataSource.dtPlaylist.Rows.Count; i++)
+            {
+                if (!(bool)DataSource.dtPlaylist.Rows[i]["isDeleted"])
+                {
+                    playlistNames.Add((string)DataSource.dtPlaylist.Rows[i]["title"]);
+                }
+                
+            }
             foreach (string playlistName in playlistNames)
             {
                 cb_playlists.Items.Add(playlistName);

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Windows.Documents;
 
 namespace MobileMusic
 {
@@ -18,6 +20,8 @@ namespace MobileMusic
         public static DataTable dtMusic = null;
         public static DataTable dtPlaylist = null;
         public static DataTable dtSongType = null;
+        public static List<string> songList = new List<string>();
+        public static List<string> authorList = new List<string>();
         public void loadSongIntoDatatable()
         {
             dtMusic = new DataTable();
@@ -29,7 +33,7 @@ namespace MobileMusic
             dtMusic.Columns.Add("isFav", typeof(bool));
             dtMusic.Columns.Add("isPlay", typeof(bool));
             dtMusic.Columns.Add("isSaved", typeof(bool));
-            dtMusic.Columns.Add("type", typeof(int));
+            dtMusic.Columns.Add("type", typeof(string));
 
             StreamReader sr = new StreamReader(songPath);
             string str;
@@ -37,8 +41,9 @@ namespace MobileMusic
             {
                 string[] st = str.Split('*');
                 Image ava = Image.FromFile(st[1]);
-
-                dtMusic.Rows.Add(st[0], ava, st[2], st[3], st[4], bool.Parse(st[5]), bool.Parse(st[6]), bool.Parse(st[7]));
+                songList.Add(st[3]);
+                authorList.Add(st[4]);
+                dtMusic.Rows.Add(st[0], ava, st[2], st[3], st[4], bool.Parse(st[5]), bool.Parse(st[6]), bool.Parse(st[7]), st[8]);
 
             }
             sr.Close();

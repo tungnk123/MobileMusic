@@ -18,13 +18,13 @@ namespace MobileMusic.usercontrols
         bool isPlay = false;
         bool isSaved = false;
         int id = -1;
-        int type = 0;
+        string type = "";
         public MusicItemUC()
         {
             InitializeComponent();
         }
 
-        public void loadDataIntoMusicItemUc(int id, Image ava, string video, string name, string author, bool isFav, bool isPlay ,bool isSaved, int type)
+        public void loadDataIntoMusicItemUc(int id, Image ava, string video, string name, string author, bool isFav, bool isPlay ,bool isSaved, string type)
         {
             this.id = id;
             this.lb_title.Text = name;
