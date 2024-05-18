@@ -16,6 +16,7 @@ namespace MobileMusic.usercontrols
         int id = -1;
         bool isSaved = false;
         bool isPlay = false;
+        bool isPlaying = false;
         string video = "";
         public FavoriteItemUC()
         {
@@ -43,6 +44,15 @@ namespace MobileMusic.usercontrols
             else
             {
                 this.pb_download.Image = Properties.Resources.ic_download;
+            }
+
+            if (isPlaying)
+            {
+                this.pb_play.Image = Properties.Resources.ic_pause;
+            }
+            else
+            {
+                this.pb_play.Image = Properties.Resources.ic_play;
             }
         }
 
@@ -87,7 +97,44 @@ namespace MobileMusic.usercontrols
         }
         private void pb_play_Click(object sender, EventArgs e)
         {
+            if (!isPlaying)
+            {
+                foreach (FavoriteItemUC musicItemUC in FavoriteUC.Instance.fpn_musicList.Controls)
+                {
+                    if (musicItemUC == this)
+                    {
+                        continue;
+                    }
+                    musicItemUC.isPlaying = false;
+                    musicItemUC.updateStatus();
+                }
+                this.isPlaying = !isPlaying;
+                updateStatus();
 
+                DataSource.dtMusic.Rows[id - 1]["isPlay"] = true;
+                DataSource dataSource = new DataSource();
+                dataSource.saveSongFromDatatableToFile();
+
+                if (MusicHelper.getInstance().isPlaying())
+                {
+                    MusicHelper.getInstance().Stop();
+                }
+                MusicHelper.getInstance().Play(video);
+            }
+            else
+            {
+                MusicHelper.getInstance().Stop();
+                this.isPlaying = !isPlaying;
+                updateStatus();
+            }
+        }
+
+        private void pb_logo_Click(object sender, EventArgs e)
+        {
+            DataSource.currentMusicId = id - 1;
+            CommentForm commentForm = new CommentForm();
+
+            commentForm.ShowDialog();
         }
     }
 

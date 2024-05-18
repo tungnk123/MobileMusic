@@ -76,6 +76,7 @@ namespace MobileMusic
             reset();
             pb_homeMenu.BackColor = Color.Beige;
             homeUC.Visible = true;
+            MusicHelper.getInstance().Stop();
         }
 
         private void pb_musicMenu_Click(object sender, EventArgs e)
@@ -83,6 +84,7 @@ namespace MobileMusic
             reset();
             pb_musicMenu.BackColor = Color.Beige;
             musicUC.Visible = true;
+            MusicHelper.getInstance().Stop();
         }
 
         private void pb_playlist_Click(object sender, EventArgs e)
@@ -90,6 +92,7 @@ namespace MobileMusic
             reset();
             pb_playlist.BackColor = Color.Beige;
             playlistUC.Visible = true;
+            MusicHelper.getInstance().Stop();
         }
 
         private void pb_favorite_Click(object sender, EventArgs e)
@@ -97,6 +100,7 @@ namespace MobileMusic
             reset();
             pb_favorite.BackColor = Color.Beige;
             favoriteUC.Visible = true;
+            MusicHelper.getInstance().Stop();
         }
     }
 }

@@ -11,21 +11,22 @@ using System.Windows.Forms;
 
 namespace MobileMusic.usercontrols
 {
-    public partial class MusicItemUC : UserControl
+    public partial class SongInPlayListUC : UserControl
     {
         string video = "";
         bool isFav = false;
         bool isPlay = false;
         bool isPlaying = false;
         bool isSaved = false;
-        int id = -1;
+        public int id = -1;
         string type = "";
-        public MusicItemUC()
+        public bool isDeleted;
+        public SongInPlayListUC()
         {
             InitializeComponent();
         }
 
-        public void loadDataIntoMusicItemUc(int id, Image ava, string video, string name, string author, bool isFav, bool isPlay ,bool isSaved, string type)
+        public void loadDataIntoMusicItemUc(int id, Image ava, string video, string name, string author, bool isFav, bool isPlay, bool isSaved, string type, bool isDeleted)
         {
             this.id = id;
             this.lb_title.Text = name;
@@ -36,6 +37,7 @@ namespace MobileMusic.usercontrols
             this.isPlay = isPlay;
             this.isSaved = isSaved;
             this.type = type;
+            this.isDeleted = isDeleted;
             updateStatus();
         }
 
@@ -77,14 +79,15 @@ namespace MobileMusic.usercontrols
             this.isFav = !isFav;
             updateStatus();
 
-            DataSource.dtMusic.Rows[id - 1]["isFav"] = !(bool)DataSource.dtMusic.Rows[id - 1]["isFav"];
+            DataSource.dtMusic.Rows[id]["isFav"] = !(bool)DataSource.dtMusic.Rows[id]["isFav"];
             DataSource dataSource = new DataSource();
             dataSource.saveSongFromDatatableToFile();
         }
 
         private void pb_download_Click(object sender, EventArgs e)
         {
-            if (choosePathToSave((string)DataSource.dtMusic.Rows[id - 1]["music"])) {
+            if (choosePathToSave((string)DataSource.dtMusic.Rows[id - 1]["music"]))
+            {
                 this.isSaved = true;
                 updateStatus();
                 DataSource.dtMusic.Rows[id - 1]["isSaved"] = true;
@@ -98,16 +101,16 @@ namespace MobileMusic.usercontrols
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-            saveFileDialog.Filter = "MP3 files (*.mp3)|*.mp3"; 
+            saveFileDialog.Filter = "MP3 files (*.mp3)|*.mp3";
             saveFileDialog.FileName = Path.GetFileName(musicPath);
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic); 
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string savePath = saveFileDialog.FileName;
                 string fullFileName = Path.GetFullPath(musicPath);
 
-                
+
                 try
                 {
                     File.Copy(fullFileName, savePath, true);
@@ -118,21 +121,20 @@ namespace MobileMusic.usercontrols
                 {
                     Console.WriteLine("Error copying file: " + ex.Message);
                 }
-                
+
             }
             return false;
         }
         private void pb_add_Click(object sender, EventArgs e)
         {
             MusicUC.Instance.choosePlaylistUC1.Visible = true;
-            MusicUC.Instance.choosePlaylistUC1.songIdClicked = id - 1;
         }
 
         private void pb_play_Click(object sender, EventArgs e)
         {
             if (!isPlaying)
             {
-                foreach (MusicItemUC musicItemUC in MusicUC.Instance.fpn_musicList.Controls)
+                foreach (SongInPlayListUC musicItemUC in DetailPlaylistUC.Instance.fpn_musicList.Controls)
                 {
                     if (musicItemUC == this)
                     {
@@ -162,11 +164,30 @@ namespace MobileMusic.usercontrols
             }
         }
 
+        private void pb_delete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Bạn có muốn bài hát khỏi playlist này không?", "Xóa nhạc trong playlist", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialog == DialogResult.OK)
+            {
+                DataSource data = new DataSource();
+                var item = DataSource.map[DataSource.currentPlaylistId].Find(x => x.id == id);
+                item.isDeleted = true;
+                data.savePlaylistSongFromMapIntoFile();
+
+                DataSource.dtPlaylist.Rows[DataSource.currentPlaylistId]["count"] = (int)DataSource.dtPlaylist.Rows[DataSource.currentPlaylistId]["count"] - 1;
+                data.savePlayListFromDatatableToFile();
+                DetailPlaylistUC.Instance.loadSongFromPlaylist(DataSource.currentPlaylistId);
+            }
+
+
+
+        }
+
         private void pb_logo_Click(object sender, EventArgs e)
         {
-            DataSource.currentMusicId = id - 1;
+            DataSource.currentMusicId = id;
             CommentForm commentForm = new CommentForm();
-            
+
             commentForm.ShowDialog();
         }
     }

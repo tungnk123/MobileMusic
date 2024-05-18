@@ -121,7 +121,7 @@
   <data name="pb_download.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAddJREFUaEPVmrtKBEEQRddEEREUMx+oP2HqD6mfJQjGGohi5CtRDAQ1UL9AUXO9
+        DQAACw0B7QfALAAAAddJREFUaEPVmrtKBEEQRddEEREUMx+oP2HqD6mfJQjGGohi5CtRDAQ1UL9AUXO9
         d7BhmCp0naqe6j5wgm1me+7dWdidoUaOTMEdeAE/4dcf8hgeuw353qJYgjdQCz6O15B7FAE/XUuZJEsV
         caX4NdMC9nELhnMJtXB9PIfhfEAtXB+5VzhaMIvhaKEshqOFshiOFspiOFooi+FooSyGo4WyGI4WymI4
         WiiL4WihLIajhbIYjhbKYjhaKIvhaKEshqOFshiOFspiVk7hK9ROHOEbPIa92YXaxpHuw95MQz470zaO
@@ -135,7 +135,7 @@
   <data name="pb_play.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAlxJREFUeF7t3UtqFFEYhuEWUREUnAQdxrFO4gJ0FU4zdAviDhSDl6FbcAtxAzrX
+        DQAACw0B7QfALAAAAlxJREFUeF7t3UtqFFEYhuEWUREUnAQdxrFO4gJ0FU4zdAviDhSDl6FbcAtxAzrX
         sYI6iDgQnKh4+Q4kIMXXna6u+k+fy/vCM86pn0D6T6oqCyIiIiIiolY7L4/ks3yRp7IjNHMP5e/AN3kg
         F4VmKn0nDwd94qPck7NCE3MDHnond4Um5Aa7zKHsCW2QG+gqf+SlXBcakRvmOn7Ic7kitEZuiGN8lfty
         QWhFbnibeC/7ckbI5IY2xWu5LTTIDWsO6RPKTaHj3JDm8lNeyFXpPjeguX2XtOpflm5zg4nS9UrvBhKt
@@ -151,7 +151,7 @@
   <data name="pb_logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAIiJSURBVHhe7d0F
+        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAIiJSURBVHhe7d0F
         mBRXuj7wZYZhZnAYdHB398EHGWBwDe4WNARC3IWEJIS4J8TdiAtxkpAES3CN3f/63t27buf/fb07yYS8
         M31Kuruq532f5/c8926Y6qrqqnNOVx35GcMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMw
         DMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMPEN6miyn81EI0LqSEqCIZhGIZhAp500VIMFrPF

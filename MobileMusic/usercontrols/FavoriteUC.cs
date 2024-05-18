@@ -5,10 +5,12 @@ namespace MobileMusic.usercontrols
 {
     public partial class FavoriteUC : UserControl
     {
+        public static FavoriteUC Instance = new FavoriteUC();
         public FavoriteUC()
         {
             InitializeComponent();
             loadFavoriteSongs();
+            Instance = this;
         }
 
         public void loadFavoriteSongs()

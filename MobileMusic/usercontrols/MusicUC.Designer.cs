@@ -94,7 +94,7 @@
             this.tb_search.Name = "tb_search";
             this.tb_search.Size = new System.Drawing.Size(364, 37);
             this.tb_search.TabIndex = 1;
-            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
+            this.tb_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_search_KeyDown);
             // 
             // pb_search
             // 
@@ -153,7 +153,7 @@
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.TextBox tb_search;
         public System.Windows.Forms.PictureBox pb_search;
-        private System.Windows.Forms.FlowLayoutPanel fpn_musicList;
+        public System.Windows.Forms.FlowLayoutPanel fpn_musicList;
         public ChoosePlaylistUC choosePlaylistUC1;
     }
 }

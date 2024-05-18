@@ -67,6 +67,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel fpn_musicList;
+        public System.Windows.Forms.FlowLayoutPanel fpn_musicList;
     }
 }

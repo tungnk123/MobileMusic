@@ -90,6 +90,7 @@
             this.pb_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_logo.TabIndex = 7;
             this.pb_logo.TabStop = false;
+            this.pb_logo.Click += new System.EventHandler(this.pb_logo_Click);
             // 
             // FavoriteItemUC
             // 

@@ -43,10 +43,10 @@
             // lb_title
             // 
             this.lb_title.AutoSize = true;
-            this.lb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.Location = new System.Drawing.Point(89, 15);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(155, 32);
+            this.lb_title.Size = new System.Drawing.Size(133, 29);
             this.lb_title.TabIndex = 8;
             this.lb_title.Text = "Shameless";
             // 
@@ -86,7 +86,7 @@
             // 
             this.lb_count.AutoSize = true;
             this.lb_count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_count.Location = new System.Drawing.Point(90, 50);
+            this.lb_count.Location = new System.Drawing.Point(90, 57);
             this.lb_count.Name = "lb_count";
             this.lb_count.Size = new System.Drawing.Size(23, 25);
             this.lb_count.TabIndex = 11;
@@ -96,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(119, 50);
+            this.label1.Location = new System.Drawing.Point(119, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 25);
             this.label1.TabIndex = 12;
@@ -115,6 +115,7 @@
             this.Controls.Add(this.pb_logo);
             this.Name = "PlaylistItemUC";
             this.Size = new System.Drawing.Size(392, 90);
+            this.Click += new System.EventHandler(this.PlaylistItemUC_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pb_deleteFolder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_deleteMusic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).EndInit();

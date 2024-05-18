@@ -33,6 +33,7 @@
             this.btn_addPlaylist = new System.Windows.Forms.Button();
             this.fpn_musicList = new System.Windows.Forms.FlowLayoutPanel();
             this.addPlaylist1 = new MobileMusic.usercontrols.AddPlaylist();
+            this.detailPlaylistUC1 = new MobileMusic.usercontrols.DetailPlaylistUC();
             this.SuspendLayout();
             // 
             // label1
@@ -79,11 +80,21 @@
             this.addPlaylist1.TabIndex = 0;
             this.addPlaylist1.Visible = false;
             // 
+            // detailPlaylistUC1
+            // 
+            this.detailPlaylistUC1.BackColor = System.Drawing.Color.Aquamarine;
+            this.detailPlaylistUC1.Location = new System.Drawing.Point(-3, 0);
+            this.detailPlaylistUC1.Name = "detailPlaylistUC1";
+            this.detailPlaylistUC1.Size = new System.Drawing.Size(455, 599);
+            this.detailPlaylistUC1.TabIndex = 7;
+            this.detailPlaylistUC1.Visible = false;
+            // 
             // PlaylistUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.detailPlaylistUC1);
             this.Controls.Add(this.addPlaylist1);
             this.Controls.Add(this.fpn_musicList);
             this.Controls.Add(this.btn_addPlaylist);
@@ -101,5 +112,6 @@
         private System.Windows.Forms.Button btn_addPlaylist;
         private System.Windows.Forms.FlowLayoutPanel fpn_musicList;
         private AddPlaylist addPlaylist1;
+        public DetailPlaylistUC detailPlaylistUC1;
     }
 }

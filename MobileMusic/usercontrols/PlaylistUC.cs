@@ -45,5 +45,6 @@ namespace MobileMusic.usercontrols
         {
             addPlaylist1.Visible = true;
         }
+
     }
 }

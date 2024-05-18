@@ -1,9 +1,9 @@
-﻿using System;
+﻿using MobileMusic.usercontrols;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Windows.Documents;
 
 namespace MobileMusic
 {
@@ -12,8 +12,11 @@ namespace MobileMusic
         string songPath = "D:\\tai-lieu-uit\\nam-3\\C#\\BaiTH2\\MobileMusic\\MobileMusic\\bin\\Debug\\assets\\song\\song.txt";
         string songTypePath = "D:\\tai-lieu-uit\\nam-3\\C#\\BaiTH2\\MobileMusic\\MobileMusic\\bin\\Debug\\assets\\songtype\\songtype.txt";
         string playlistPath = "D:\\tai-lieu-uit\\nam-3\\C#\\BaiTH2\\MobileMusic\\MobileMusic\\bin\\Debug\\assets\\playlist\\playlist.txt";
+        string playlistSongPath = "D:\\tai-lieu-uit\\nam-3\\C#\\BaiTH2\\MobileMusic\\MobileMusic\\bin\\Debug\\assets\\playlist-song\\playlist-song.txt";
 
         public static int countLinePlaylist = 0;
+        public static int currentPlaylistId = 0;
+        public static int currentMusicId = 0;
         public static DataTable dtRecents = null;
         public static DataTable dtDownload = null;
         public static DataTable dtLove = null;
@@ -22,6 +25,7 @@ namespace MobileMusic
         public static DataTable dtSongType = null;
         public static List<string> songList = new List<string>();
         public static List<string> authorList = new List<string>();
+        public static Dictionary<int, List<SongInPlayListUC>> map = new Dictionary<int, List<SongInPlayListUC>>();
         public void loadSongIntoDatatable()
         {
             dtMusic = new DataTable();
@@ -180,6 +184,59 @@ namespace MobileMusic
             sr.Close();
             countLinePlaylist = count;
         }
+
+        public void loadPlaylistSongIntoMap()
+        {
+            map.Clear();
+            StreamReader sr = new StreamReader(playlistSongPath);
+            string str;
+            while ((str = sr.ReadLine()) != null)
+            {
+                string[] st = str.Split('*');
+                int playlistId = Int32.Parse(st[0]);
+                int songId = Int32.Parse(st[1]);
+                bool isDeleted = bool.Parse(st[2]);
+                if (!isDeleted)
+                {
+                    SongInPlayListUC musicItemUC = new SongInPlayListUC();
+                    musicItemUC.loadDataIntoMusicItemUc(
+                        (int)DataSource.dtMusic.Rows[songId]["id"] - 1
+                        , (Image)DataSource.dtMusic.Rows[songId]["image"]
+                        , (string)DataSource.dtMusic.Rows[songId]["music"]
+                        , (string)DataSource.dtMusic.Rows[songId]["name"]
+                        , (string)DataSource.dtMusic.Rows[songId]["author"]
+                        , (bool)DataSource.dtMusic.Rows[songId]["isFav"]
+                        , (bool)DataSource.dtMusic.Rows[songId]["isPlay"]
+                        , (bool)DataSource.dtMusic.Rows[songId]["isSaved"]
+                        , (string)DataSource.dtMusic.Rows[songId]["type"]
+                        , isDeleted);
+                    if (!map.ContainsKey(playlistId))
+                    {
+                        map[playlistId] = new List<SongInPlayListUC>();
+                    }
+                    map[playlistId].Add(musicItemUC);
+                }
+
+            }
+            sr.Close();
+        }
+
+        public void savePlaylistSongFromMapIntoFile()
+        {
+            using (StreamWriter sw = new StreamWriter(playlistSongPath))
+            {
+                foreach (int key in map.Keys)
+                {
+                    foreach (SongInPlayListUC value in map[key])
+                    {
+                        sw.WriteLine(key + "*" + value.id + "*" + value.isDeleted);
+                    }
+
+                }
+            }
+        }
+
+
     }
 
 
